@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -5,12 +6,51 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xfff0f0f0),
-      appBar: AppBar(
-          title: Center(
-        child: Text("Mi Pagina Principal"),
-      )),
       body: Center(
-        child: Text("hola mundo"),
+        child: Column(
+          children: [
+            Image.asset(
+              'img/imagen1.jpg',
+              width: 400,
+              height: 300,
+            ),
+            Container(
+              width: 250,
+              height: 150,
+              alignment: Alignment.center,
+              margin: EdgeInsets.all(20),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              decoration: BoxDecoration(
+                  color: Colors.black12,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(50),
+                    topRight: Radius.circular(50),
+                    bottomLeft: Radius.circular(50),
+                    bottomRight: Radius.circular(50),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.redAccent,
+                        blurRadius: 40,
+                        offset: Offset(20, 20)),
+                  ],
+                  gradient: LinearGradient(colors: [
+                    Colors.green[200],
+                    Colors.green[300],
+                    Colors.green[400]
+                  ])),
+              child: Text(
+                "videoJuegos",
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.green),
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
